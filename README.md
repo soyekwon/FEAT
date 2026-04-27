@@ -1,4 +1,4 @@
-## ✨ FEAT: Fashion Editing and Try-On from Any Design
+## [CVPR 2026] FEAT: Fashion Editing and Try-On from Any Design
 
 **FEAT** is a method for flexible fashion editing and virtual try-on from arbitrary designs.
 
