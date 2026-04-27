@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FEAT: Fashion Editing and Try-On from Any Design</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="hero">
+    <div class="container">
+      <p class="conference-badge">CVPR 2026 <span class="highlight-badge">Highlight</span></p>
+      <h1 class="title">FEAT: Fashion Editing and Try-On<br />from Any Design</h1>
+
+      <div class="authors">
+        <span class="author"><a href="#">Soye Kwon</a><sup>1</sup></span>,
+        <span class="author"><a href="#">Keonyoung Lee</a><sup>2</sup></span>,
+        <span class="author"><a href="#">Dahuin Jung</a><sup>3*</sup></span>,
+        <span class="author"><a href="#">Jaekoo Lee</a><sup>1*</sup></span>
+      </div>
+
+      <!-- <div class="affiliations">
+        <span><sup>1</sup>Department of Computer Science, Kookmin University</span><br />
+        <span><sup>2</sup>School of Software, Soongsil University</span><br />
+        <span><sup>3</sup>Department of Artificial Intelligence, Chung-Ang University</span>
+      </div>
+      <p class="corresponding">* Corresponding authors</p> -->
+
+      <!-- <div class="link-buttons">
+        <a href="#" class="btn"><i class="fas fa-archive"></i> arXiv</a>
+        <a href="https://huggingface.co/spaces/soye/FEAT" class="btn"><i class="fas fa-desktop"></i> Demo</a>
+        <a href="https://github.com/soyekwon/FEAT" class="btn"><i class="fab fa-github"></i> Code</a>
+      </div> -->
+      <div class="link-buttons">
+    <a href="#" class="btn">
+      <i class="fas fa-box-archive" style="color:#ff7a59;"></i> arXiv
+    </a>
+    <a href="https://huggingface.co/spaces/soye/FEAT" class="btn">
+      <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face" style="width:1em;height:1em;vertical-align:-0.12em;margin-right:0.35em;" />
+      Demo
+    </a>
+    <a href="https://github.com/soyekwon/FEAT" class="btn">
+      <i class="fab fa-github" style="background:linear-gradient(45deg,#6e40c9,#00b3ff,#22c55e,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"></i>
+      Code
+    </a>
+  </div>
+    </div>
+  </header>
+
+  <!-- Teaser -->
+  <section class="section teaser-section">
+    <div class="container">
+      <div class="teaser-image">
+        <img src="static/images/teaser.png" alt="Examples of FEAT" />
+      </div>
+      <p class="teaser-caption">
+        Examples of <b>FEAT</b> (<i>Fashion Editing And Try-On from Any Design</i>).
+        <span class="yellow-label">Yellow box</span>: target prompt;
+        <span class="pink-label">Pink box</span>: source prompt;
+        <span class="blue-label">Blue box</span>: text prompt.
+        FEAT enables editing and try-on across garments and accessories using diverse design sources.
+      </p>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section" id="abstract">
+    <div class="container narrow">
+      <h2>Abstract</h2>
+      <p class="abstract-text">
+        Fashion design aims to express a designer's creative intent and to depict how garments interact with the human body.
+        Recent methods condition on multimodal inputs to support garment editing and virtual try-on. However, existing methods
+        still (i) confine design to garment-related images, excluding creative design sources such as artwork, abstract imagery,
+        and natural photographs, and (ii) cannot support complete outfits, including accessories.
+        We present <b>FEAT</b> (<b>F</b>ashion <b>E</b>diting <b>A</b>nd <b>T</b>ry-On from Any Design), a method
+        that enables editing and try-on across garments and accessories using diverse design sources.
+        To achieve this, we introduce <b>Disentangled Dual Injection (DDI)</b>. It takes both apparel and non-apparel
+        design sources and selectively injects design cues via content and style disentanglement.
+        Furthermore, we propose <b>Orthogonal-Guided Noise Fusion (OGNF)</b>, a training-free mechanism that removes
+        residual garments via orthogonal projection and applies region-specific noise strategies to enable virtual try-on
+        for both garments and accessories.
+        Extensive experiments demonstrate that FEAT achieves state-of-the-art performance in design flexibility,
+        prompt consistency, and visual realism.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contributions -->
+  <!-- <section class="section alt-bg" id="contributions">
+    <div class="container narrow">
+      <h2>Key Contributions</h2>
+      <div class="contributions-grid">
+        <div class="contribution-card">
+          <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Disentangled Dual Injection (DDI)</h3>
+          <p>Enables fine-grained integration of diverse design sources by separating content and style in image prompts, facilitating broader and more controllable editing.</p>
+        </div>
+        <div class="contribution-card">
+          <div class="card-icon"><i class="fas fa-vector-square"></i></div>
+          <h3>Orthogonal-Guided Noise Fusion (OGNF)</h3>
+          <p>A training-free approach that supports full-outfit try-on beyond garments, including accessories and multi-item compositions, without pairwise dataset training.</p>
+        </div>
+        <div class="contribution-card">
+          <div class="card-icon"><i class="fas fa-database"></i></div>
+          <h3>Virtual Fitting Dataset</h3>
+          <p>Publicly released virtual fitting dataset covering diverse fashion items, providing a critical resource for systematic benchmarking and advancement in VTON.</p>
+        </div>
+        <div class="contribution-card">
+          <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Rigorous Evaluation</h3>
+          <p>Comprehensive evaluation using CD, CLIP image/text scores, user studies, and GPT-4V oracle-based metrics to benchmark VTON methods reliably.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Method Overview -->
+  <section class="section" id="method">
+    <div class="container">
+      <h2>Method Overview</h2>
+      <div class="method-image">
+        <img src="static/images/pipeline.png" alt="Overview of FEAT framework" />
+      </div>
+      <p class="method-caption">
+        <b>Overview of FEAT.</b> Given a person x<sup>p</sup>, a sketch <i>s</i>, an image prompt <i>i</i>, and a text prompt <i>y</i>,
+        FEAT generates a try-on result x<sup>tr</sup>. Our approach incorporates scaling factors to dynamically adjust
+        the influence of each input modality. The framework consists of two key components:
+        <b>DDI</b> disentangles content and style from the image prompt via Content-Subtractive Proxy Embedding (CSPE)
+        and Selective Dual Injection (SDI), while <b>OGNF</b> removes existing garments through Orthogonal Fashion Removal (OFR)
+        and applies Region-Adaptive Noise Fusion (RANF) for seamless try-on.
+      </p>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section alt-bg" id="results">
+    <div class="container">
+
+      <h2>Qualitative Comparisons</h2>
+      <div class="result-image">
+        <img src="static/images/comparison.png" alt="Qualitative comparisons under content and style conditioned settings" />
+      </div>
+      <p class="result-caption">
+        <b>FEAT</b> generates natural and realistic
+        try-on results that faithfully reflect the sketch and image prompt. In contrast, ControlNet + IP-Adapter leaves
+        garment residues and suffers from strong content leakage.
+      </p>
+
+      <h2>Cross-Domain Applicability</h2>
+      <div class="result-image">
+        <img src="static/images/cross_domain.png" alt="Cross-domain generalization" />
+      </div>
+      <p class="result-caption">
+        Owing to its training-free design, <b>FEAT</b> can be applied not only to conventional human-photo fashion editing
+        but also to a wide variety of other design domains, including game characters, animation, and even sculpture.
+      </p>
+
+      <h2>Scaling Factor Control</h2>
+      <div class="result-image">
+        <img src="static/images/scaling2.png" alt="Scaling factor variations" />
+      </div>
+      <p class="result-caption">
+        Visual comparisons of scaling factor variations. Our <b>DDI</b> effectively disentangles content and style,
+        allowing users to selectively control each component through adjustable content and style scales.
+      </p>
+
+      <h2>Multi-Candidate Design Exploration</h2>
+      <div class="result-image">
+        <img src="static/images/random_seed.png" alt="Scaling factor variations" />
+      </div>
+      <p class="result-caption">
+          Users can easily explore multiple
+  design candidates under identical conditions, highlighting
+  the practical applicability of our method.
+      </p>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="section" id="video">
+    <div class="container narrow">
+      <h2>Video</h2>
+      <div class="video-wrapper">
+        <!-- TODO: YouTube 영상 ID를 업데이트하세요 -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="FEAT Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section alt-bg" id="bibtex">
+    <div class="container narrow">
+      <h2>BibTeX</h2>
+      <div class="bibtex-box">
+        <button class="copy-btn" onclick="copyBibtex()"><i class="fas fa-copy"></i> Copy</button>
+        <pre><code>@inproceedings{kwon2026feat,
+  title     = {FEAT: Fashion Editing and Try-On from Any Design},
+  author    = {Kwon, Soye and Lee, Keonyoung and Jung, Dahuin and Lee, Jaekoo},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision
+               and Pattern Recognition (CVPR)},
+  year      = {2026}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>
+        Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyBibtex() {
+      const code = document.querySelector('.bibtex-box code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+
+</html>

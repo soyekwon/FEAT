@@ -1,0 +1,417 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1a1a2e;
+  line-height: 1.7;
+  background: #ffffff;
+}
+
+a {
+  color: #4361ee;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #3a0ca3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container.narrow {
+  max-width: 860px;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.alt-bg {
+  background: #f8f9fc;
+}
+
+/* ===== Hero / Header ===== */
+.hero {
+  text-align: center;
+  padding: 72px 24px 48px;
+  background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
+}
+
+.conference-badge {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #4361ee;
+  margin-bottom: 20px;
+}
+
+.highlight-badge {
+  background: linear-gradient(135deg, #f72585, #b5179e);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-left: 6px;
+}
+
+.title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a2e;
+  margin-bottom: 28px;
+}
+
+.authors {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.author a {
+  color: #333;
+  font-weight: 500;
+}
+
+.author a:hover {
+  color: #4361ee;
+}
+
+.affiliations {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+
+.corresponding {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+/* ===== Link Buttons ===== */
+.link-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  background: #1a1a2e;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  background: #4361ee;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn i {
+  font-size: 1rem;
+}
+
+/* ===== Section Headings ===== */
+h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 36px;
+  color: #1a1a2e;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 40px 0 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* ===== Teaser ===== */
+.teaser-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+  background: #f5f5f5;
+}
+
+.teaser-image img {
+  width: 100%;
+}
+
+.teaser-caption {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.yellow-label {
+  color: #e6a700;
+  font-weight: 600;
+}
+
+.pink-label {
+  color: #e84393;
+  font-weight: 600;
+}
+
+.blue-label {
+  color: #4361ee;
+  font-weight: 600;
+}
+
+/* ===== Abstract ===== */
+.abstract-text {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #444;
+  text-align: justify;
+}
+
+/* ===== Contributions ===== */
+.contributions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.contribution-card {
+  background: #fff;
+  border: 1px solid #e8ecf1;
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.contribution-card:hover {
+  box-shadow: 0 6px 24px rgba(67, 97, 238, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.contribution-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  text-align: left;
+  color: #1a1a2e;
+}
+
+.contribution-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.65;
+}
+
+/* ===== Method ===== */
+.method-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+  background: #fff;
+}
+
+.method-image img {
+  width: 100%;
+}
+
+.method-caption {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== Results ===== */
+.result-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.result-image img {
+  width: 100%;
+}
+
+.result-caption {
+  font-size: 0.92rem;
+  color: #666;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 24px;
+  line-height: 1.65;
+}
+
+/* ===== Video ===== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===== BibTeX ===== */
+.bibtex-box {
+  position: relative;
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 28px 28px 28px;
+  overflow-x: auto;
+}
+
+.bibtex-box pre {
+  margin: 0;
+}
+
+.bibtex-box code {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.88rem;
+  color: #c9d1d9;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #c9d1d9;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid #e8ecf1;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: #4361ee;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .authors {
+    font-size: 0.95rem;
+  }
+
+  .contributions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .link-buttons {
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    padding: 48px 16px 32px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
